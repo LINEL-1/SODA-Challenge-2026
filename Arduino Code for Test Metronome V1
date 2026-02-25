@@ -1,0 +1,21 @@
+int sensorValue;
+int delayValue;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(D2, OUTPUT);
+}
+
+void loop() {
+  sensorValue = analogRead(D3);
+
+  delayValue = map(sensorValue, 0, 1023, 50, 200);
+
+  digitalWrite(D2, HIGH);
+
+  delay(delayValue);
+
+  digitalWrite(D2, LOW);
+
+  delay(delayValue);
+}
