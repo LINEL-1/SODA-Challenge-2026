@@ -3,11 +3,14 @@ int delayValue;
 
 void setup() {
   Serial.begin(9600);
+
   pinMode(D2, OUTPUT);
 }
 
 void loop() {
-  sensorValue = analogRead(D3);
+  sensorValue = analogRead(A5);
+
+  Serial.println(sensorValue);
 
   delayValue = map(sensorValue, 0, 1023, 50, 200);
 
